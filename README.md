@@ -1,6 +1,7 @@
 # FinGaze
 
 LIVE DEMO: https://fingaze-mze7kk3xqsmxckkosm8wwe.streamlit.app/
+
 FinGaze is a Streamlit-based AI trading and portfolio analysis project that combines:
 
 - Reinforcement learning models for single-stock trading simulation.
