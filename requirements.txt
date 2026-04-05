@@ -1,0 +1,11 @@
+streamlit
+pandas
+numpy
+yfinance
+plotly
+matplotlib
+scikit-learn
+stable-baselines3
+gymnasium
+torch
+requests
