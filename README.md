@@ -6,16 +6,20 @@ FinGaze is a Streamlit-based AI trading and portfolio analysis project that comb
 - Rule-based sector allocation models for multi-stock portfolio construction.
 - Conservative Monte Carlo-style future projection workflows.
 - Visual comparison tools to evaluate model behavior and reliability.
+- Demo trading interface for hands-on experience.
+- Market news analysis for informed decision-making.
 
 The app is designed as a multi-page dashboard for experimentation, not as live-trading software.
 
 ## What This Project Does
 
-FinGaze provides three major workflows:
+FinGaze provides five major workflows:
 
 1. Single-stock RL trading simulation (`app.py`)
 2. Sector allocation and custom stock selection (`pages/1_Sector_Allocation.py`)
 3. Model comparison across RL and sector models (`pages/3_Model_Comparison.py`)
+4. Demo Demat Trading interface (`pages/4_Demat_Trading.py`)
+5. Market news analysis (`pages/5_Market_News_Analysis.py`)
 
 It also includes a dedicated forecast-results page:
 
@@ -48,6 +52,8 @@ And a training script to create model files:
 FinGaze/
 ├── app.py                             # Main RL stock simulation dashboard
 ├── finrl_train.py                     # RL model training script
+├── requirements.txt                   # Python dependencies
+├── theme.py                           # Shared UI theme and styling
 ├── models/
 │   ├── a2c_model.zip
 │   ├── ddpg_model.zip
@@ -57,7 +63,9 @@ FinGaze/
 └── pages/
     ├── 1_Sector_Allocation.py         # Sector portfolio builder + custom selection
     ├── 2_Future_Prediction.py         # Forecast-focused deep-dive page
-    └── 3_Model_Comparison.py          # RL and sector-model comparison lab
+    ├── 3_Model_Comparison.py          # RL and sector-model comparison lab
+    ├── 4_Demat_Trading.py             # Demo trading interface with RL models
+    └── 5_Market_News_Analysis.py      # Market news fetching and analysis
 ```
 
 ## How The Main Components Work
@@ -134,6 +142,18 @@ Forecast mode:
   - Rank IC
   - Top-picks average return
 
+### 6) Demo Demat Trading (`pages/4_Demat_Trading.py`)
+
+- Provides a demo trading interface using trained RL models.
+- Allows users to simulate trades with real-time feedback.
+- Integrates with the main app's models for hands-on experience.
+
+### 7) Market News Analysis (`pages/5_Market_News_Analysis.py`)
+
+- Fetches and analyzes market news from various sources.
+- Displays news articles with sentiment analysis.
+- Helps users stay informed about market trends and events.
+
 ## Setup
 
 ### 1) Create and activate virtual environment
@@ -147,7 +167,7 @@ source .venv/bin/activate
 
 ```bash
 pip install --upgrade pip
-pip install streamlit yfinance numpy pandas gymnasium stable-baselines3 plotly
+pip install -r requirements.txt
 ```
 
 ## Run The App
@@ -190,7 +210,6 @@ This generates/overwrites:
 
 ## Recommended Improvements
 
-- Add a `requirements.txt` or `pyproject.toml` for reproducible installs.
 - Add unit tests for environment logic and portfolio math.
 - Add experiment tracking for model versions and training metrics.
 - Separate analytics engine from UI layer for cleaner architecture.
@@ -201,7 +220,7 @@ This generates/overwrites:
 ```bash
 git status
 git add .
-git commit -m "Add detailed README"
+git commit -m "Update README with current project structure and new features"
 git push -u origin main
 ```
 
